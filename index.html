@@ -3,10 +3,25 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ZP Furniture – Custom Furniture & Interior Tegal</title>
+  <title>Zeeshan Production Furniture Interior – Custom Furniture Tegal</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
+    /* ── OPENING SCREEN ── */
+    #opening{position:fixed;inset:0;background:#1a1007;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;}
+    #opening.done{opacity:0;pointer-events:none;transition:opacity .7s ease;}
+    .op-wrap{display:flex;flex-direction:column;align-items:center;gap:0;}
+    .op-svg-wrap{position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;}
+    .gear-svg{position:absolute;inset:0;width:200px;height:200px;animation:gearSpin 2s linear forwards;}
+    @keyframes gearSpin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+    .op-logo-img{width:110px;height:110px;object-fit:contain;border-radius:8px;opacity:0;animation:opReveal .6s ease 1.9s forwards;}
+    @keyframes opReveal{from{opacity:0;transform:scale(.75);}to{opacity:1;transform:scale(1);}}
+    .op-brand{color:#F5F0E8;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;letter-spacing:.06em;opacity:0;animation:opReveal .6s ease 2.2s forwards;text-align:center;margin-top:14px;line-height:1.25;}
+    .op-brand small{display:block;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.22em;color:#C9963A;text-transform:uppercase;font-weight:400;margin-top:4px;}
+    .op-bar{width:150px;height:2px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;margin-top:18px;opacity:0;animation:opReveal .4s ease 2.4s forwards;}
+    .op-fill{height:100%;background:linear-gradient(90deg,#C9963A,#E8841A);width:0;animation:fillBar .9s ease 2.5s forwards;}
+    @keyframes fillBar{from{width:0;}to{width:100%;}}
+
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     :root{
       --cream:#F5F0E8;--cream2:#EDE6D6;--cream3:#D9CEBC;
@@ -178,7 +193,8 @@
     .testi-stars{color:var(--orange);font-size:.85rem;margin-bottom:13px;}
     .testi-text{font-size:.84rem;line-height:1.75;color:#5a5248;font-style:italic;margin-bottom:17px;}
     .testi-author{display:flex;align-items:center;gap:11px;}
-    .testi-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--orange));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.1rem;font-family:var(--fd);flex-shrink:0;}
+    .testi-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--gold);}
+    .testi-avatar img{width:100%;height:100%;object-fit:cover;}
     .testi-name{font-weight:600;font-size:.84rem;color:var(--brown);}
     .testi-loc{font-size:.72rem;color:#9a8e82;}
 
@@ -252,6 +268,46 @@
 </head>
 <body>
 
+<!-- OPENING SCREEN -->
+<div id="opening">
+  <div class="op-wrap">
+    <div class="op-svg-wrap">
+      <!-- Gear SVG bergerigi berputar -->
+      <svg class="gear-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(100,100)">
+          <!-- Outer gear teeth -->
+          <path d="
+            M0,-88 L6,-76 A76,76 0 0,1 37,-67 L50,-74 L62,-56 L52,-46
+            A76,76 0 0,1 67,-16 L80,-12 L80,12 L67,16
+            A76,76 0 0,1 52,46 L62,56 L50,74 L37,67
+            A76,76 0 0,1 6,76 L0,88 L-6,76
+            A76,76 0 0,1 -37,67 L-50,74 L-62,56 L-52,46
+            A76,76 0 0,1 -67,16 L-80,12 L-80,-12 L-67,-16
+            A76,76 0 0,1 -52,-46 L-62,-56 L-50,-74 L-37,-67
+            A76,76 0 0,1 -6,-76 Z
+          " fill="none" stroke="#C9963A" stroke-width="3" opacity="0.9"/>
+          <!-- Inner circle -->
+          <circle r="55" fill="none" stroke="#E8841A" stroke-width="1.5" opacity="0.5"/>
+          <!-- Spoke lines -->
+          <line x1="0" y1="-52" x2="0" y2="52" stroke="#C9963A" stroke-width="1" opacity="0.3"/>
+          <line x1="-52" y1="0" x2="52" y2="0" stroke="#C9963A" stroke-width="1" opacity="0.3"/>
+          <line x1="-37" y1="-37" x2="37" y2="37" stroke="#C9963A" stroke-width="1" opacity="0.3"/>
+          <line x1="37" y1="-37" x2="-37" y2="37" stroke="#C9963A" stroke-width="1" opacity="0.3"/>
+          <!-- Center circle -->
+          <circle r="18" fill="#2A1A08" stroke="#C9963A" stroke-width="2"/>
+        </g>
+      </svg>
+      <!-- Logo muncul setelah gear berhenti -->
+      <img class="op-logo-img" src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/ZPlogo.jpg" alt="ZP Logo">
+    </div>
+    <div class="op-brand">
+      Zeeshan Production
+      <small>Furniture Interior Tegal</small>
+    </div>
+    <div class="op-bar"><div class="op-fill"></div></div>
+  </div>
+</div>
+
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-left">
@@ -260,8 +316,8 @@
     <span>Senin–Sabtu 08.00–17.00 WIB</span>
   </div>
   <div class="topbar-right">
-    <a href="#" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
-    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+    <a href="https://www.instagram.com/zp_furniture.interior" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://www.tiktok.com/@zp_interior.furniture" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
   </div>
 </div>
 
@@ -269,7 +325,7 @@
 <nav id="navbar">
   <a href="#" class="nav-logo">
     <img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/ZPlogo.jpg" alt="ZP Furniture Logo">
-    <div class="nav-logo-text">ZP Furniture<span>Custom Interior Tegal</span></div>
+    <div class="nav-logo-text">Zeeshan Production<span>Furniture Interior Tegal</span></div>
   </a>
   <ul class="nav-links">
     <li><a href="#tentang">Tentang</a></li>
@@ -307,9 +363,9 @@
   <div class="hero-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/bg/bg6.jpg')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">✦ Furniture Custom Tegal</div>
+    <div class="hero-badge">✦ Zeeshan Production Furniture Interior</div>
     <h1>Wujudkan Ruang <em>Impian</em> Anda Bersama Kami</h1>
-    <p>ZP Furniture hadir dengan solusi custom furniture berkualitas tinggi, dikerjakan oleh pengrajin berpengalaman. Desain elegan, material terbaik, harga transparan.</p>
+    <p>Zeeshan Production Furniture Interior hadir dengan solusi custom furniture berkualitas tinggi, dikerjakan oleh pengrajin berpengalaman. Desain elegan, material terbaik, harga transparan.</p>
     <div class="hero-badges">
       <div class="badge-item"><i class="fas fa-comments"></i> Gratis Konsultasi</div>
       <div class="badge-item"><i class="fas fa-shield-alt"></i> Bergaransi</div>
@@ -343,10 +399,10 @@
     </div>
     <div class="reveal">
       <div class="section-tag">Tentang Kami</div>
-      <h2 class="section-title">ZP Furniture – <em>Kualitas</em> yang Bisa Anda Rasakan</h2>
+      <h2 class="section-title">Zeeshan Production – <em>Kualitas</em> yang Bisa Anda Rasakan</h2>
       <div class="divider"></div>
       <p class="section-desc">Kami memberikan solusi menyeluruh bagi kebutuhan custom furniture Anda dengan kualitas serta fungsi sesuai dengan konsep dan desain ruang impian Anda. Harga yang kami tawarkan sangatlah transparan dan terjangkau untuk semua kalangan.</p>
-      <p class="section-desc" style="margin-top:12px;">Berlokasi di Pacul, Kec. Talang, Kabupaten Tegal — kami siap melayani pembuatan furniture rumah, kantor, kafe, hingga instansi dengan pengerjaan profesional dan tepat waktu.</p>
+      <p class="section-desc" style="margin-top:12px;">Berlokasi di Pacul, Kec. Talang, Kabupaten Tegal — Zeeshan Production Furniture Interior siap melayani pembuatan furniture rumah, kantor, kafe, hingga instansi dengan pengerjaan profesional dan tepat waktu.</p>
       <div class="tentang-points">
         <div class="point-item">
           <div class="point-icon"><i class="fas fa-store"></i></div>
@@ -660,24 +716,120 @@
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">"Jasa furniture yang bisa dipercaya, berani garansi untuk semua produknya dengan harga yang bisa disesuaikan budget. Mantap!"</p>
         <div class="testi-author">
-          <div class="testi-avatar">A</div>
-          <div><div class="testi-name">Ardi S.</div><div class="testi-loc">Tegal</div></div>
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r1.jpg" alt="Ardi"></div>
+          <div><div class="testi-name">Ardi Saputra</div><div class="testi-loc">Tegal</div></div>
         </div>
       </div>
       <div class="testi-card reveal">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">"Hasilnya rapi banget dan sesuai desain yang diminta. Timnya profesional, sabar, dan komunikatif. Puas banget!"</p>
         <div class="testi-author">
-          <div class="testi-avatar">R</div>
-          <div><div class="testi-name">Rina W.</div><div class="testi-loc">Slawi</div></div>
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r2.jpg" alt="Rina"></div>
+          <div><div class="testi-name">Rina Wulandari</div><div class="testi-loc">Slawi</div></div>
         </div>
       </div>
       <div class="testi-card reveal">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Bisa custom furniture sesuai permintaan. Hasilnya bagus! Orangnya sabar nanggepin yang banyak request. Terima kasih!"</p>
+        <p class="testi-text">"Bisa custom furniture sesuai permintaan. Hasilnya bagus! Orangnya sabar nanggepin yang banyak request. Terima kasih banyak!"</p>
         <div class="testi-author">
-          <div class="testi-avatar">D</div>
-          <div><div class="testi-name">Dewi P.</div><div class="testi-loc">Brebes</div></div>
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r3.jpg" alt="Dewi"></div>
+          <div><div class="testi-name">Dewi Pratiwi</div><div class="testi-loc">Brebes</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Kitchen set-nya keren banget! Sesuai banget sama konsep dapur yang gw minta. Kerjanya juga cepet dan bersih. Recommended!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r4.jpg" alt="Hendra"></div>
+          <div><div class="testi-name">Hendra Kusuma</div><div class="testi-loc">Tegal</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Wardrobe-nya muat banyak banget dan finishingnya halus. Harga juga sangat masuk akal untuk kualitas segini. Makasih ZP!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r5.jpg" alt="Siti"></div>
+          <div><div class="testi-name">Siti Rahayu</div><div class="testi-loc">Pemalang</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Sudah order kamarset untuk anak. Hasilnya luar biasa, anak saya senang banget. Kualitas bagus, pengiriman tepat waktu!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r6.jpg" alt="Bambang"></div>
+          <div><div class="testi-name">Bambang Triyono</div><div class="testi-loc">Slawi</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Sofanya nyaman banget dan bahannya premium. Tamu-tamu di rumah sering nanya beli di mana. Langsung saya rekomendasiin ke sini!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r7.jpg" alt="Laila"></div>
+          <div><div class="testi-name">Laila Fitriani</div><div class="testi-loc">Tegal</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Konsultasi desainnya enak banget, dibikinin 3D dulu sebelum produksi. Jadi yakin hasilnya sesuai ekspektasi. Suka banget!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r8.jpg" alt="Rudi"></div>
+          <div><div class="testi-name">Rudi Hartono</div><div class="testi-loc">Brebes</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Pemasangannya rapi dan cepat, tidak sampai setengah hari sudah beres. Tim kerjanya juga sopan dan bertanggung jawab. Top!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r9.jpg" alt="Nurul"></div>
+          <div><div class="testi-name">Nurul Hidayah</div><div class="testi-loc">Tegal</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Udah dua kali order di sini, pertama kitchen set terus wardrobe. Dua-duanya memuaskan! Pasti balik lagi kalau butuh furniture."</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r10.jpg" alt="Agus"></div>
+          <div><div class="testi-name">Agus Setiawan</div><div class="testi-loc">Pemalang</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Desainnya modern dan minimalis sesuai yang saya minta. Materialnya kuat, tidak goyang sama sekali. Harga terbaik di Tegal!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r11.jpg" alt="Mega"></div>
+          <div><div class="testi-name">Mega Permata</div><div class="testi-loc">Slawi</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Responsif banget waktu saya tanya-tanya via WA. Dikasih pilihan bahan dan warna yang banyak. Hasilnya sesuai harapan, mantul!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r12.jpg" alt="Fitri"></div>
+          <div><div class="testi-name">Fitri Andriani</div><div class="testi-loc">Tegal</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Kamar tidur anak jadi cantik banget setelah pakai furniture dari sini. Cat dan finishingnya halus. Nggak nyesel sama sekali!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r13.jpg" alt="Wahyu"></div>
+          <div><div class="testi-name">Wahyu Prabowo</div><div class="testi-loc">Brebes</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Proses ordernya mudah, tinggal WA, diskusi ukuran, DP, dan langsung dikerjain. Hasilnya bisa dipantau juga. Pelayanannya keren!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r14.jpg" alt="Yuni"></div>
+          <div><div class="testi-name">Yuni Astuti</div><div class="testi-loc">Tegal</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Garansi produknya bikin tenang. Ada sedikit masalah setelah pasang langsung direspons dan diperbaiki. Pelayanan purna jual terbaik!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://cdn.jsdelivr.net/gh/nothing010101/ZP-Furniture@main/r15.jpg" alt="Doni"></div>
+          <div><div class="testi-name">Doni Kurniawan</div><div class="testi-loc">Slawi</div></div>
         </div>
       </div>
     </div>
@@ -740,11 +892,14 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 <span>ZP Furniture</span>. Custom Furniture Tegal. All rights reserved.</p>
+  <div style="display:flex;flex-direction:column;gap:4px;">
+    <p>© 2026 <span>Zeeshan Production Furniture Interior</span>. Custom Furniture Tegal. All rights reserved.</p>
+    <p style="font-size:.7rem;color:rgba(237,230,214,.35);">Made with ♥ by <span style="color:var(--gold);">Syahrul</span> 2026 &nbsp;|&nbsp; Butuh website? Hubungi <a href="https://wa.me/6285702391439" target="_blank" style="color:var(--gold);text-decoration:none;">+62857-0239-1439</a></p>
+  </div>
   <div class="f-social">
     <a href="https://wa.me/6287866030812" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/zp_furniture.interior" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@zp_interior.furniture" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
   </div>
 </footer>
 
@@ -756,6 +911,12 @@
 </div>
 
 <script>
+  // Opening screen dismiss
+  setTimeout(()=>{
+    document.getElementById('opening').classList.add('done');
+    setTimeout(()=>document.getElementById('opening').remove(),800);
+  },3600);
+
   // Navbar scroll
   window.addEventListener('scroll',()=>{
     document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
