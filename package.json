@@ -1,0 +1,22 @@
+{
+  "name": "zp-furniture",
+  "version": "1.0.0",
+  "description": "Zeeshan Production Furniture Interior - Custom Furniture & Interior Tegal",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static HTML site - no build step required'",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "furniture",
+    "interior",
+    "tegal",
+    "custom-furniture"
+  ],
+  "author": "Zeeshan Production",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
